@@ -1,0 +1,93 @@
+function DatabaseManager(dto) {
+    if (!dto || !dto.client) {
+        throw {
+            errorCode: config.errorCodeList['missingParameter'],
+            errorDetail: "dto.client cannot be null or empty"
+        };
+    }
+
+    for(key in dto){
+        this[key] = dto[key];
+    }
+    
+}
+
+DatabaseManager.prototype.get = function(params){
+    if (!params || !params.path) {
+        throw {
+            errorCode: config.errorCodeList['missingParameter'],
+            errorDetail: "path cannot be null or empty"
+        };
+    }
+    params.url=params.path;
+    params.method="GET"
+    delete params.path;
+   
+   
+    return this.client.callApi(params);
+}
+DatabaseManager.prototype.put = function(params){
+    if (!params || !params.path || !params.data) {
+        throw {
+            errorCode: config.errorCodeList['missingParameter'],
+            errorDetail: "path or data cannot be null or empty"
+        };
+    }
+    params.url=params.path;
+    params.bodyString=JSON.stringify(params.data);
+    params.method="PUT"
+    delete params.path;
+    delete params.data;
+   
+   
+    return this.client.callApi(params);
+}
+DatabaseManager.prototype.post = function(params){
+    if (!params || !params.path || !params.data) {
+        throw {
+            errorCode: config.errorCodeList['missingParameter'],
+            errorDetail: "path or data cannot be null or empty"
+        };
+    }
+    params.url=params.path;
+    params.bodyString=JSON.stringify(params.data);
+    params.method="POST"
+    delete params.path;
+    delete params.data;
+   
+   
+    return this.client.callApi(params);
+}
+DatabaseManager.prototype.patch = function(params){
+    if (!params || !params.path || !params.data) {
+        throw {
+            errorCode: config.errorCodeList['missingParameter'],
+            errorDetail: "path or data cannot be null or empty"
+        };
+    }
+    params.url=params.path;
+    params.bodyString=JSON.stringify(params.data);
+    params.method="PATCH"
+    delete params.path;
+    delete params.data;
+   
+   
+    return this.client.callApi(params);
+}
+
+DatabaseManager.prototype.delete = function(params){
+    if (!params || !params.path ) {
+        throw {
+            errorCode: config.errorCodeList['missingParameter'],
+            errorDetail: "path cannot be null or empty"
+        };
+    }
+    params.url=params.path;
+    //params.bodyString=JSON.stringify(params.data);
+    params.method="DELETE"
+    delete params.path;
+  
+   
+   
+    return this.client.callApi(params);
+}

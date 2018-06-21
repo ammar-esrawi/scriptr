@@ -1,0 +1,26 @@
+var clientModule = require("./client");
+var configModule = require("./config");
+
+var dbmgt = require("./clientapi/databaseManager");
+
+function Firebase(config) {
+    
+    if (config) {
+        
+        for(var key in config){
+            this[key] = config[key]
+        }
+    }
+   
+    this.token = this.token ? this.token : configModule.token;
+    this.client = new clientModule.Client({token:this.token});
+}
+
+Firebase.prototype.getDatabaseManager = function() {
+  
+    if (!this.databaseManager) {
+        this.databaseManager = new dbmgt.DatabaseManager({client:this.client});
+    }
+    
+    return this.databaseManager;
+};

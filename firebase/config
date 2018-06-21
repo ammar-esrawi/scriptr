@@ -1,0 +1,7 @@
+const database="scritr-465b2";
+
+const endPoint = "https://"+database+".firebaseio.com";
+
+
+const token = "ya29.c.ElvhBY_22ASm024zLDrX6R0c8Rm9MQeXeiVKviIciv2MCOrvzGTeKiMYpWNkCLUNx1TAkYBu6uaCM7C5XsfADqU1XPVpjBj3f1vZhak-dXguegH34iNtmk_x6c5y";// Default API key
+
