@@ -1,0 +1,43 @@
+var fbModule=require('./firebase/Firebase');
+var http = require("http");
+var fb= new fbModule.Firebase({});
+
+fb.getDatabaseManager().put(
+    {
+   		path:"menu/value.json",
+        data:{
+            id:"testId"
+        }
+    }
+);
+//post
+fb.getDatabaseManager().post(
+    {
+   		path:"menu/value.json",
+        data:{
+            id:"testId",qId:"q",forDelete:"dddd"
+        }
+    }
+);
+//patch
+fb.getDatabaseManager().patch(
+    {
+   		path:"menu/value.json",
+        data:{
+            id:"testId",qId:"q",forDelete:"dddd"
+        }
+    }
+);
+
+//delete
+fb.getDatabaseManager().delete(
+    {
+   		path:"menu/value/forDelete.json"
+        
+    }
+);
+
+return fb.getDatabaseManager().get({
+   path:"menu.json"});
+
+
