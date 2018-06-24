@@ -1,0 +1,17 @@
+var fbModule = require('./newFirebase/Firebase');
+var qModule= require('./newFirebase/apis/database/Query');
+var fb=new fbModule.Firebase();
+var dbMngr=fb.getDatabaseManager();
+var myDb=dbMngr.db("scritr-465b2");
+var  doc=myDb.doc("menu.id");
+
+doc.noWritePrint(true);
+
+var q=new qModule.Query("value");
+q.equalTo(5);
+
+
+//var obj= doc.get(q);
+
+return doc.put({data:"ffff"});
+
