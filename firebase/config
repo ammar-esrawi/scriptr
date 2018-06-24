@@ -1,7 +1,0 @@
-const database="scritr-465b2";
-
-const endPoint = "https://"+database+".firebaseio.com";
-
-
-const token = "";// Default API key
-
