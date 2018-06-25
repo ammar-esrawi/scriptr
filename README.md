@@ -101,7 +101,7 @@ doc.secureWrite(false);
 ```
 ### 8- enable no write print mode
 this will make the api calls to return only empty response to lower the network traffic
-help ful when posting huge data amount
+helpful when posting huge data amount
 
 equal to print=silent at Firebase
 
