@@ -1,7 +1,7 @@
 # Project Title
 firebase client for scriptr platform
 
-## Current implementation 
+## Current implemented modules 
 
 Real Time Database
 
@@ -43,8 +43,104 @@ const errorCodeList = {
 };
 ```
 
+##Document Operations
+### 1- get()
+return the current value of the docment
+```
+var x= doc.get();
+```
+
+### 2- post()
+representation for firebase post api
+```
+var x= doc.post(
+{
+	data:"data"//your data object or primitive
+}
+);
+```
+### 3- put()
+representation for firebase put api
+```
+var x= doc.put(
+{
+	data:"data"//your data object or primitive
+}
+);
+```
+### 4- patch()
+representation for firebase post api
+```
+var x= doc.patch(
+{
+	data:"data"//your data object or primitive
+}
+);
+```
+
+### 5- delete()
+representation for firebase delete api
+```
+var x= doc.delete();
+```
+### 6- inner(path);
+return Document object to inner the current the path can be empty only if the current document path is not empty
+```
+var innerDoc=doc.inner("inner");
+```
+
+### 7- enable secure write mode
+this will only make changes to the original value at the doc path only if no one else changed it
+you must call get after enable the secure mode
+```
+doc.secureWrite(true);
+var x=doc.get();
+//changes on x
+doc.post(x);
+doc.secureWrite(false);
+```
+### 8- enable no write print mode
+this will make the api calls to return only empty response to lower the network traffic
+help ful when posting huge data amount
+
+equal to print=silent at Firebase
+
+```
+doc.noWritePrint(true);
+var x=doc.get();
+
+doc.post(x);
+doc.noWritePrint(false);
+```
+
+### 9-quering data
+as the firebase model you can call an orderby query 
 
 
+```
+var q=doc.query("value");
+q.equalTo(5);
+var obj= doc.get(q);
+
+```
+you can use also  startAt, endAt, limitToFirst, limitToLast 
+see the firebase docs for more info how the data will be filtered
+
+##Database methods 
+1-doc(path)
+return document object 
+if path not passed it will return the root object
+```
+var dbMngr=fb.getDatabaseManager();
+var myDb=dbMngr.db("db");
+var  doc=myDb.doc("path.to.obj");
+```
+### 2-getRules()
+return document object represents the database rules
+you can call all the document methods on it
+### 3-getSettings()
+return document object represents the database settings
+you can call all the document methods on it
 
 
 
