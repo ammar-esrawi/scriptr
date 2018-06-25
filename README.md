@@ -145,6 +145,6 @@ you can call all the document methods on it
 #### More info
 
 see the Firebase documentation
-* [Reference] (https://firebase.google.com/docs/reference/rest/database/)
-* [Tutorial] (https://firebase.google.com/docs/database/rest/start)
+* [Reference](https://firebase.google.com/docs/reference/rest/database/)
+* [Tutorial](https://firebase.google.com/docs/database/rest/start)
 
