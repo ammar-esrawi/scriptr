@@ -1,7 +1,0 @@
-//var x= {"url":"menu.json","method":"GET","headers":{"Authorization":"Bearer ya29.c.ElvkBe9EYbUAGCT8-bKoxomijSiu5kiVVdQLfFk41oDqpRtsqhFwMzzNsuKo8WqpFFK6PyjcH1F1LyLwqxNmqwGY8eJLCu7dYyKeoHw3ebHSQDz-ofiniX0b5Qxw"},"params":{"print":"silent"}}
-
-var x= {"url":"https://scritr-465b2.firebaseio.com/menu/id.json","params":{"print":"silent"},"bodyString":"\"ffff\"","method":"PUT","headers":{"Authorization":"Bearer ya29.c.ElvkBfuqiwzlueV4Gb8y4-MYbkVrWqzMdPW8e3VtAUPoD9xYUqX95lLiXB3Hg8H7pRkJ0opij8k_LdEGNLOGhU4eEFZMhtfv8Sx1HbYTBe5B6MCEGL4Oh6SJD8vR" ,"Content-Type":"application/json"} }
-
-var http=require("http");
-
-return  http.request(x);
