@@ -43,7 +43,7 @@ const errorCodeList = {
 };
 ```
 
-##Document Operations
+## Document Operations
 ### 1- get()
 return the current value of the docment
 ```
@@ -126,7 +126,7 @@ var obj= doc.get(q);
 you can use also  startAt, endAt, limitToFirst, limitToLast 
 see the firebase docs for more info how the data will be filtered
 
-##Database methods 
+## Database methods 
 1-doc(path)
 return document object 
 if path not passed it will return the root object
@@ -142,5 +142,9 @@ you can call all the document methods on it
 return document object represents the database settings
 you can call all the document methods on it
 
+#### More info
 
+see the Firebase documentation
+* [Reference] (https://firebase.google.com/docs/reference/rest/database/)
+* [Tutorial] (https://firebase.google.com/docs/database/rest/start)
 
